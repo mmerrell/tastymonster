@@ -1,0 +1,8 @@
+#parse( "header.vm" )
+	#formStart
+        #formInput( "titleField" "Title" "patent.title" )
+        <br/>
+        #formPassword( "descriptionField" "Description" "patent.description" )
+    	</table>
+    	#formButton( "btnSubmit" "nextPage" "Login" )
+	#formEnd

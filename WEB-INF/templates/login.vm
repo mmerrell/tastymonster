@@ -1,0 +1,15 @@
+#divStart( "login" )
+
+#if ( !$user.loggedIn())
+	<table>
+	#formStart
+        #formInput( "loginField" "Login" "login.userId" )
+        <br/>
+        #formPassword( "passwordField" "Password" "login.password" )
+	</table>
+    	#formButton( "btn_Login" "landingPage.vm" "Login" )
+    	#formButton( "btn_Register" "createUser.vm" "Register" )
+
+	#formEnd
+#end
+#divEnd

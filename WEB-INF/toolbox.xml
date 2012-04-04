@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<toolbox>
+	<xhtml>true</xhtml>
+	<tool>
+		<key>velocity</key>
+		<scope>request</scope>
+		<request-path>index.vm</request-path>
+		<class>com.tastymonster.patentmojo.business.inventory.SimpleServlet</class>
+	</tool>
+	<data type="number">
+		<key>version</key>
+		<value>1.1</value>
+	</data>
+	<data type="boolean">
+		<key>isSimple</key>
+		<value>true</value>
+	</data>
+	<data type="string">
+		<key>foo</key>
+		<value>this is foo.</value>
+	</data>
+	<data type="string">
+		<key>bar</key>
+		<value>this is bar from velocity.</value>
+	</data>
+	<tool>
+		<key>map</key>
+		<scope>session</scope>
+		<class>java.util.HashMap</class>
+	</tool>
+	<tool>
+		<key>date</key>
+		<scope>application</scope>
+		<class>org.apache.velocity.tools.generic.DateTool</class>
+	</tool>
+</toolbox>

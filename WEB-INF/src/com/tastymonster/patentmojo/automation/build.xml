@@ -1,0 +1,57 @@
+<project name="automation" basedir="." default="usage">
+
+	<target name="usage">
+		<echo message=""/>
+		<echo message="Automation build file"/>
+		<echo message="------------------------------------------"/>
+		<echo message=""/>
+		<echo message="Generates the Page Object files from the presentation layer"/>
+	</target>
+	
+	<property name="${automation.jar}" value="dist/automation.jar"/>
+	
+	<!--
+		Set buildAutomationGenerator.notRequired to true if automation.jar is newer than
+		all of the "base" or "codegen" java files.
+	-->
+	<target name="automationAlreadyBuilt">
+		<uptodate property="buildAutomationGenerator.notRequired" targetfile="${automation.jar}">
+			<srcfiles dir= "src/com/tastymonster/patentmojo/automation/base" includes="**/*.java"/>
+			<srcfiles dir= "src/com/tastymonster/patentmojo/automation/element/base" includes="**/*.java"/>
+			<srcfiles dir= "src/com/tastymonster/patentmojo/automation/page/base" includes="**/*.java"/>
+			<srcfiles dir= "codegen" includes="**/*.java"/>
+		</uptodate>
+	</target>
+	
+	<target name="buildAutomationGenerator" depends="automationAlreadyBuilt" unless="buildAutomationGenerator.notRequired">
+		<antcall target="baseCompile">
+	     	<param name="binDir" value="${build.dir}/src"/>
+	       	<param name="srcDir" 
+				   value="src/com/authoria/automation/base:src/com/authoria/automation/element/base:src/com/authoria/automation/page/base:codegen"/>
+	       	<param name="classpathID" value="automation.classpath"/>
+	     </antcall>
+	</target>
+	
+	<!--
+		Set generateAutomationJavaFiles.notRequired to true if automation.jar is newer than
+		Platform's pages.zip, all of Suite's .vm files, and all "codegen" java files.
+	-->
+	<target name="automationAlreadyGenerated">
+		<uptodate property="generateAutomationJavaFiles.notRequired" targetfile="${automation.jar}">
+			<srcfiles dir= "../presentation/src/page/velocity" includes="**/*.vm"/>
+			<srcfiles dir= "${newarch.project.dir}/dist" includes="pages.zip"/>
+			<srcfiles dir= "codegen" includes="**/*.java"/>
+			<srcfiles dir= "codegen" includes="**/*.vm"/>
+		</uptodate>
+	</target>
+	
+	<target name="generateAutomationJavaFiles" depends="buildAutomationGenerator,automationAlreadyGenerated" unless="generateAutomationJavaFiles.notRequired">
+		<!-- Placeholder target to codegen automation java files. -->
+		<antcall target="baseTest">
+			<param name="testDir" value="codegen"/>
+			<param name="classpathID" value="automation.test.classpath"/>
+			<param name="testcase" value="${generateAutomationJavaFilesTestCase}" />
+		</antcall>
+	</target>
+
+</project>

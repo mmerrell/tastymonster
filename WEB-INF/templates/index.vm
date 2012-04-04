@@ -1,0 +1,52 @@
+#parse( "header.vm" )
+<html>
+    <body>
+        #divStart( "wrapper" )
+			#parse( "topframe.vm" )
+        	#divStart( "page" )
+        		#divStart( "content" )
+        			#divStartBox( "welcome" )
+        				<h2>Welcome to PatentMojo</h2>
+        				<p>
+        					This is <strong>PatentMojo</strong>, a patent submission site designed to showcase some cool test automation stuff, but have absolutely no functionality related to patents
+        				</p>
+        			#divEnd
+        			#divStartBox( "next" )
+        				<h3>Here is some static text (in an h3)</h3>
+        				<p>
+        					Here is some static text in paragraph form. You might want an assertion here too--who knows?
+        				</p>
+        				<ul class="list">
+        					<li class="first"><a href="#">Here's a link in a list</a></li>
+        					<li><a href="#">Here's another link</a></li>
+        				</ul>
+        			#divEnd
+        			#clearfix
+        		#divEnd
+        		#divStart( "sidebar" )
+        			#divStartBox( "sidebar_upper" )
+        				<h3>Side bar</h3>
+        				<p>
+        					Here's a button. But what if you want to change it to a link?
+        				</p>
+						#button( "btn_Change" "#" "Change" )
+        			#divEnd ## arcuTempus
+        			#divStartBox( "viverraAmet" )
+        				<h3>Farther down the sidebar</h3>
+    					<p>We get some other form elements</p>
+						<p>--drop-down</p>
+						<p>--radio button</p>
+						<p>--checkbox</p>
+        				<ul class="list">
+        					<li class="first">#link( "link1" "#" "Link 1" )</li>
+        					<li>#link( "link2" "#" "Link 2" )</li>
+        					<li class="last">#link( "link3" "#" "Link 3" )</li>
+        				</ul>
+        			#divEnd ## viverraAmet
+        		#divEnd ## sidebar
+        		#clearfix
+        	#divEnd ## page
+        #divEnd ## wrapper
+		#parse( "footer.vm" )
+    </body>
+</html>
