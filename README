@@ -1,0 +1,3 @@
+This is a small web application and automation framework, composed for a minimal demo given at the Selenium Conference in London April 17, 2012. Many things still need to be worked out and improved, but this is being made public so that people can have a look at how we did the things we did. It is our hope that we may be able to expand this into a full-fledged framework atop Selenium/WebDriver, and that the Page Object generation ideas in here can be made agnostic to any presentation layer implementation out there.
+
+For now, play around, enjoy, and remember--the app is intentionally simplistic and terrible.
