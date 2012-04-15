@@ -1,6 +1,8 @@
 # Compiled source #
 ###################
 generated/*
+target/*
+test-output/*
 *.com
 *.class
 *.dll

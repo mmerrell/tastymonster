@@ -1,0 +1,11 @@
+#divStart( "patent_table" )
+	Greetings, $velocity.getMessage()
+   
+	#clearfix
+	
+    #set( $headers = ["col 0","col 1","col 2","col 3","col 4"] )
+    #set( $rows = ["row 0","row 1","row 2","row 3","row 4"] )
+    #set( $color = "yellow" )
+    
+    #table2D( "table2" $headers $velocity.get2DList() )
+#divEnd ## velocity

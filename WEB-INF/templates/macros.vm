@@ -1,0 +1,95 @@
+#macro( table $id $headers $rows )
+  <table>
+  #foreach( $header in $headers )
+    <th id="col_0">$header</th>
+  #end
+  #tablerows( $rows )
+  </table>
+#end
+
+#macro( table2D $id $headers $rowList )
+  <table  width="100%">
+  #foreach( $header in $headers )
+    <th id="col_0"><font color="black">$header</font></th>
+  #end
+  #foreach( $row in $rowList )
+    #tablerows( $row )
+  #end
+  </table>
+#end
+
+## Tablerows
+#macro( tablerows $values )
+  <tr>
+	#foreach( $value in $values )
+      <td bgcolor="yellow">$value</td>
+    #end
+  </tr>  
+#end
+
+#macro( formInputWithType $id $label $olja $type )
+	<tr>
+		<td>$label&nbsp;&nbsp;&nbsp;</td><td><input id="$id" type="$type"/></td>
+	</tr>
+#end
+
+#macro( formInput $id $label $olja )
+	#formInputWithType( $id $label $olja "" )
+#end
+
+#macro( formPassword $id $label $olja )
+	#formInputWithType( $id $label $olja "password" )
+#end
+
+#macro( divStart $id )
+	#divStartWithClass( $id "" )
+#end
+
+#macro( divStartWithClass $id $class )
+	<div id="$id" class="$class">
+#end
+
+#macro( divStartBox $id )
+	#divStartWithClass( $id "box" )
+#end
+
+#macro( divEnd )
+	</div>
+#end
+
+#macro( clearfix )
+	<br class="clearfix" />
+#end
+
+#macro( link $id $href $label )
+    <a id="$id" href="$href">$label</a>
+#end
+
+#macro( horizontalTabBar $tabs )
+		<ul>
+        	<li class="first current_page_item"><a href="#">$tabs.get( 0 )</a></li>
+			#foreach( $tabName in $tabs )
+				#if ( $tabName != $tabs.get( 0 ))
+				<li><a href="#">$tabName</a></li>
+				#end
+			#end
+## leave this out until we figure out how to get $tabs.size() - 1
+##			<li class="last"><a href="#">$tabs.get( $tabs.size() )</a></li>
+		</ul>
+#end
+
+#macro( button $id $href $label )
+	<button id="$id" style="button" type="button" onClick="window.location='$href'">$label</button> 
+#end
+
+#macro( formButton $id $href $label )
+	#button( $id $href $label )
+#end
+
+#macro( formStart )
+	<form>
+#end
+
+#macro( formEnd )
+	</form>
+#end
