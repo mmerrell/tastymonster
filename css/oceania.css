@@ -89,6 +89,10 @@ ul h4 {
 	margin-bottom: 0.35em;
 }
 
+td {
+    color: #009999;
+}
+
 .box {
 	overflow: hidden;
 	margin: 0 0 1em 0;

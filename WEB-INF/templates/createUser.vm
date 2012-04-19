@@ -2,8 +2,6 @@
 #parse( "header.vm" )
 
 #divStart( "wrapper" )
-	#divStart( "standard_form" )
-
 	<table>
 	#formStart
         #formInput( "firstNameField" "First Name" "user.firstName" )
@@ -13,9 +11,8 @@
         #formInput( "securityQuestionField" "Security Question" "user.securityQuestion" )
         #formPassword( "securityAnswerField" "Security Answer" "user.securityAnswer" )
     	</table>
-    	#formButton( "btnSubmit" "landingPage.vm" "Submit" )
+    	#formButton( "btnSubmit" "landing.vm" "Submit" )
+    	#button( "guestLogin" "landing.vm" "Guest" )
+    	
 	#formEnd
-
-	
-	#divEnd ## page
 #divEnd ## wrapper

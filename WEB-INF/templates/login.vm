@@ -7,9 +7,8 @@
         <br/>
         #formPassword( "passwordField" "Password" "login.password" )
 	</table>
-    	#formButton( "btn_Login" "landingPage.vm" "Login" )
+    	#formButton( "btn_Login" "landing.vm" "Login" )
     	#formButton( "btn_Register" "createUser.vm" "Register" )
-
 	#formEnd
 #end
 #divEnd

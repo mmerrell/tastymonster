@@ -3,7 +3,7 @@
 <suite name="Suite" parallel="none">
   <test name="Test" preserve-order="true">
     <packages>
-      <package name="com.tastymonster.patentmojo.automation.codegen"/>
+      <package name="com.tastymonster.automation.codegen"/>
     </packages>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

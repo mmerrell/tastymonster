@@ -1,7 +1,7 @@
 #divStart( "header" )
     #parse( "login.vm" )
 	#divStart( "logo" )
-			<h1><a href="landingPage.vm">PatentMojo</a></h1>
+			<h1><a href="landing.vm">PatentMojo</a></h1>
 	#divEnd ## logo
 	#divStart( "menu" )
 		#horizontalTabBar( $velocity.getMainMenuTabs() )

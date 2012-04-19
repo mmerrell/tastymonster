@@ -1,8 +1,19 @@
 #parse( "header.vm" )
+    #divStart( "wrapper" )
+    <table>
 	#formStart
-        #formInput( "titleField" "Title" "patent.title" )
-        <br/>
-        #formPassword( "descriptionField" "Description" "patent.description" )
-    	</table>
-    	#formButton( "btnSubmit" "nextPage" "Login" )
+    #formInput( "titleField" "Title" "patent.title" )
+    #formInput( "descriptionField" "Description" "patent.description" )
+	#formInput( "dateConceived" "Date Conceived" "patent.dateConceived" )
+	#formInput( "inventorName" "Inventor (comma-separated)" "patent.inventorName" )
+	#formInput( "inventorTitle" "Inventor Title" "patent.inventorTitle" )
+	<br />
+	#button( "addInventor" "addInventor" "Add Inventor" )
+	#formInput( "companyName" "Company Name" "patent.companyName" )
+	#formInput( "industry" "Industry" "patent.industry" )
+    </table>
+    #formButton( "btnSubmit" "patentTable" "Submit" )
 	#formEnd
+	</table>
+	#divEnd
+
