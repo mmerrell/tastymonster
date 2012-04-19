@@ -1,0 +1,16 @@
+package ${package};
+
+##imports
+import com.tastymonster.automation.element.base.*;
+import com.tastymonster.automation.page.base.AbstractAutomationPage;
+
+##Class declaration
+public class ${fieldsClassName} extends AbstractFields  {
+##WebElements
+	protected final ${pageName} page = newPage( ${pageName}.class );
+#foreach( $field in $fields )
+	public final ${field.getInterface()} ${field.getFieldName()} = page.${field.getId()};
+#end
+##Tables
+##End
+}

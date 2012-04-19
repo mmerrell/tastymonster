@@ -1,0 +1,10 @@
+package ${package};
+
+##imports
+import com.tastymonster.patentmojo.automation.element.base.*;
+import com.tastymonster.patentmojo.automation.page.base.AbstractAutomationPage;
+
+##Class declaration
+public class ${pageName} extends ${parentPage} {
+
+}
