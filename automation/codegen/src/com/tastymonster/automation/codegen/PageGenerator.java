@@ -18,19 +18,30 @@ import org.testng.log4testng.Logger;
 
 import com.tastymonster.automation.codegen.PageInfo;
 
-
+/**
+ * This is all about responsibility. Here's the idea:
+ *   a) The IPresentationLayerInfo will build the information about the presentation layer 
+ *     (working through whatever mechanism is necessary to build a list of files) 
+ *   b) Then, this class will build the list of PageInfo objects by handing off responsibility 
+ *     to the IPresentationParser on a file by file basis. The PageInfo object is responsible 
+ *     for grouping files together to make a Page 
+ *   c) Finally, the Generator is responsible for 
+ *     putting the Automation PageObjects together based on whatever template model is specified by
+ *     the PageModelFactory (to be implemented later)
+ * @author mmerrell
+ *
+ */
 public class PageGenerator {
 
 	//TODO These paths are hard-coded for the moment 
 	private static final String AUTOMATION_PATH = "automation/src/com/tastymonster/automation/";
 	private static final String DERIVED_PAGE_PATH = AUTOMATION_PATH + "page/base/";
-	private static final String TEMPLATE_PATH = "WEB-INF/templates/";
 	private static final String CODEGEN_TEMPLATE_PATH = "automation/codegen/src/com/tastymonster/automation/codegen/templates/";
 	private static final String BASE_PAGE_PATH = "automation/generated/src/com/tastymonster/automation/page/base/";
 
 	private Logger log = Logger.getLogger( this.getClass() );
 	
-	private List<File> files;
+	private IPresentationLayerInfo presentationLayer;
 	private List<PageInfo> pages;
 	
 	/**
@@ -41,16 +52,15 @@ public class PageGenerator {
 		
 		//Initialize the files to be processed by the generator
 		log.warn( "Populating list of files to be parsed" );
-		initFiles();
+		initPresentationLayer();
 		
-		//Phase 2 - parse files into PageInfo objects
+		//Phase 2 - transform files into PageInfo objects
 		
 		//Get the complete list of the presentation layer files we want to parse
 		//This is just the list of files--this is where it would loop through xwork definitions
 		// and other means of putting together the various templates
 		log.warn( "Parsing pages to initialize PageInfo objects" );
 		initPageInfo();
-		
 		
 		//Phase 3 - Generate the classes
 		
@@ -67,51 +77,24 @@ public class PageGenerator {
 	//****************************************************************
 	// Phase 1 - initialize the presentation layer file set
 	//****************************************************************
-	
-	/**
-	 * Initializes a list of all presentation layer files to be parsed. Each entry contains the path to the file 
-	 * as well as the file name. For example:
-	 */
-	protected void initFiles() {
-		//TODO this needs to be abstracted
-		List<File> files = new ArrayList<File>();
-		this.addFile( files, TEMPLATE_PATH + "index.vm" );
-		this.addFile( files, TEMPLATE_PATH + "footer.vm" );
-		this.addFile( files, TEMPLATE_PATH + "login.vm" );
-		this.addFile( files, TEMPLATE_PATH + "createUser.vm" );
-		this.addFile( files, TEMPLATE_PATH + "landing.vm" );
-		this.addFile( files, TEMPLATE_PATH + "login.vm" );
-		this.addFile( files, TEMPLATE_PATH + "addPatent.vm" );
-		this.files = files;
-	}
-
-	/**
-	 * Add a file to the list of files--this allows for checks to be made on the given file before it is added
-	 * @param files
-	 * @param path
-	 */
-	protected void addFile( List<File> files, String path ) {
-		File file = new File( path );
-		
-		//Make sure the file is readable (and perform other checks if necessary
-		if ( file.canRead() ) {
-			files.add( file );
-		}
-	}
-
-	/**
-	 * Returns a list of all the files to be parsed
-	 */
-	protected List<File> getFiles() {
-		return this.files;
+	private void initPresentationLayer() {
+		IPresentationLayerInfo presentationLayer = new PatentMojoPresentationLayerInfo();
+		this.setPresentationLayer( presentationLayer );
 	}
 	
 	/**
-	 * Injector for the files field
+	 * Returns the sanitized list of files that make up the presentation layer
+	 */
+	protected IPresentationLayerInfo getPresentationLayer() {
+		return this.presentationLayer;
+	}
+	
+	/**
+	 * Injector for the presentationLayer field
 	 * @param files
 	 */
-	public void setFiles( List<File> files ) {
-		this.files = files;
+	public void setPresentationLayer( IPresentationLayerInfo presentationLayer ) {
+		this.presentationLayer = presentationLayer;
 	}
 	
 	//****************************************************************
@@ -135,7 +118,7 @@ public class PageGenerator {
 	 * @return
 	 */
 	protected void initPageInfo() {
-		List<File> files = getFiles();
+		List<File> files = presentationLayer.getFileList();
 		List<PageInfo> pages = new ArrayList<PageInfo>();
 		for ( File file: files ) {
 			PageInfo pageInfo = getPageInfo( file );
