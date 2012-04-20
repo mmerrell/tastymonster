@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Test artifacts  #
 ###################
 test-output
@@ -5,6 +6,13 @@ target
 
 # Compiled source #
 ###################
+=======
+# Compiled source #
+###################
+generated/*
+target/*
+test-output/*
+>>>>>>> 7c0d3312bbea91714bc642722c9edf5de13b3fff
 *.com
 *.class
 *.dll
@@ -27,7 +35,11 @@ target
 
 # Logs and databases #
 ######################
+<<<<<<< HEAD
 *.log*
+=======
+*.log
+>>>>>>> 7c0d3312bbea91714bc642722c9edf5de13b3fff
 *.sql
 *.sqlite
 
@@ -37,6 +49,7 @@ target
 ehthumbs.db
 Icon?
 Thumbs.db
+<<<<<<< HEAD
 
 # Java
 ######################
@@ -44,3 +57,5 @@ Thumbs.db
 *.war
 *.ear
 
+=======
+>>>>>>> 7c0d3312bbea91714bc642722c9edf5de13b3fff

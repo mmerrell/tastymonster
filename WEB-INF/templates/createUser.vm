@@ -13,6 +13,5 @@
     	</table>
     	#formButton( "btnSubmit" "landing.vm" "Submit" )
     	#button( "guestLogin" "landing.vm" "Guest" )
-    	
 	#formEnd
 #divEnd ## wrapper
