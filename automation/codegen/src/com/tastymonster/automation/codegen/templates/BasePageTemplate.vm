@@ -12,7 +12,7 @@ public class ${pageName} extends ${parentPage} {
 #end
 
 	##package-protected constructor
-	${pageName}() {
+    ${pageName}() {
 	}
 	
 	public String getPageURI() {

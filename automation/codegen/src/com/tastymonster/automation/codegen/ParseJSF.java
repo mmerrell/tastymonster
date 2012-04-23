@@ -11,13 +11,11 @@ public class ParseJSF implements IPresentationParser {
 
 	@Override
 	public String getPageName() {
-		// TODO Auto-generated method stub
 		return "";
 	}
 
 	@Override
 	public String getPageURI() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -25,4 +23,7 @@ public class ParseJSF implements IPresentationParser {
 		return null;
 	}
 
+	@Override
+	public void initPageContents() {
+	}
 }

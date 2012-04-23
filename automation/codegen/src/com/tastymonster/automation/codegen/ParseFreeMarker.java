@@ -16,12 +16,15 @@ public class ParseFreeMarker implements IPresentationParser {
 
 	@Override
 	public String getPageURI() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	protected String normalizeFieldName(String string) {
 		return null;
+	}
+
+	@Override
+	public void initPageContents() {
 	}
 
 }

@@ -121,6 +121,7 @@ public class ParseVelocity implements IPresentationParser {
 		macrosToIgnore.add( "horizontalTabBar" );
 		macrosToIgnore.add( "formEnd" );
 		macrosToIgnore.add( "tablerows" );
+		macrosToIgnore.add( "set" );
 	}
 	
 	@Override
