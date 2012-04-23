@@ -5,6 +5,10 @@ target
 automation/generated/**
 work
 
+# Generated pages. These should get re-generated every time a build is run, not checked in to the repository. The 
+# Derived pages are checked in
+automation/generated/src/com/tastymonster/automation/page/base/*
+
 # Compiled source #
 ###################
 *.com
@@ -46,4 +50,3 @@ Thumbs.db
 *.war
 *.ear
 
-automation/generated/src/com/tastymonster/automation/page/base/*

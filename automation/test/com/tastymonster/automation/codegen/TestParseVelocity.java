@@ -55,8 +55,8 @@ public class TestParseVelocity {
 	public void testBuildFieldDetails() {
 		TestableParseVelocity testableParser = new TestableParseVelocity( null );
 		testableParser.setPageContents( 
-				"#formInput( \"loginField\" \"Login\" \"login.userId\" )"
-				);
+			"#formInput( \"loginField\" \"Login\" \"login.userId\" )"
+		);
 		
 		Set<FieldDetails> fields = testableParser.buildFieldDetails();
 		Assert.assertEquals( 1, fields.size(), "fields should contain 1 elements" );

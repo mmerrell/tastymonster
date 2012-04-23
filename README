@@ -1,3 +1,14 @@
-This is a small web application and automation framework, composed for a minimal demo given at the Selenium Conference in London April 17, 2012. Many things still need to be worked out and improved, but this is being made public so that people can have a look at how we did the things we did. It is our hope that we may be able to expand this into a full-fledged framework atop Selenium/WebDriver, and that the Page Object generation ideas in here can be made agnostic to any presentation layer implementation out there.
+This project is the implementation of a talk given at the Selenium Conference 2012 in London. 
 
-For now, play around, enjoy, and remember--the app is intentionally simplistic and terrible.
+When configured properly, it will generate a set of Selenium Page Objects for use in automated test scripts. These
+pages will allow you to "absorb" changes made to the product under test, by analyzing the presentation layer and reflecting
+changes in this Page Object model.
+
+There are two projects in this repository. The TastyMonster project is the Automation Framework, while the PatentMojo project
+is an example web-app, which will hopefully grow in sophistication over time. 
+
+For now, play around, enjoy, and remember--the concept is sound, as demonstrated on a major commercial web-app. This project
+is initially meant to provide more ideas than implementation, but we hope to make it grow over time into a real specification.
+
+As word gets out about the power of this concept, we hope this project will serve as a beacon of unified terminology and process,
+allowing us to push for better change control within the industry.
