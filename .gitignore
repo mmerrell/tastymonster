@@ -45,3 +45,5 @@ Thumbs.db
 *.jar
 *.war
 *.ear
+
+automation/generated/src/com/tastymonster/automation/page/base/*
