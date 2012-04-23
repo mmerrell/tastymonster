@@ -1,3 +1,4 @@
+#set( $cssFolder = "css" ) 
 #parse( "header.vm" )
 <html>
     <body>
@@ -29,7 +30,7 @@
         				<p>
         					Here's a button. But what if you want to change it to a link?
         				</p>
-						#link( "btn_Change" "addPatent.vm" "Change" )
+						#link( "btn_Change" "inventory/addPatent.vm" "Change" )
         			#divEnd ## arcuTempus
         			#divStartBox( "viverraAmet" )
         				<h3>Farther down the sidebar</h3>

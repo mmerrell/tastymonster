@@ -1,3 +1,4 @@
+#set( $cssFolder = "css" ) 
 #divStart( "header" )
     #parse( "login.vm" )
 	#divStart( "logo" )

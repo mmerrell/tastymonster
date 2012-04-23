@@ -1,3 +1,4 @@
+#set( $cssFolder = "css" ) 
 #parse( "header.vm" )
 <html>
     <body>
