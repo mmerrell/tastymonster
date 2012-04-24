@@ -46,7 +46,6 @@ Thumbs.db
 
 # Java
 ######################
-*.jar
 *.war
 *.ear
 

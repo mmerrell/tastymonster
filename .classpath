@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="automation/director/src"/>
+	<classpathentry kind="src" path="platform/src"/>
+	<classpathentry kind="src" path="codegen/src"/>
+	<classpathentry kind="src" path="automation/codegen/src"/>
 	<classpathentry kind="src" path="automation/test"/>
 	<classpathentry kind="src" path="automation/model/src"/>
-	<classpathentry kind="src" path="automation/codegen/src"/>
 	<classpathentry kind="src" path="automation/generated/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"/>
@@ -13,6 +15,5 @@
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/TastyMonster"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
