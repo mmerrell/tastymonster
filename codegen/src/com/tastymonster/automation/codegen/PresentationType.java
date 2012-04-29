@@ -29,7 +29,7 @@ public class PresentationType {
 	/**
 	 * This Map associates files of a given type with the Parsing Class that can put them into the correct context
 	 */
-	protected static Map<String, Class<? extends IPresentationParser>> presentationTypeMap = new HashMap<String, Class<? extends IPresentationParser>>();
+	private static Map<String, Class<? extends IPresentationParser>> presentationTypeMap = new HashMap<String, Class<? extends IPresentationParser>>();
 	
 	/**
 	 * Initialize a set of default associations. These can be overwritten in an extending class in order to implement
@@ -53,6 +53,24 @@ public class PresentationType {
 		this.file = file;
 	}
 
+	/**
+	 * This is where you add your own parser type to the factory. You can also send an existing file extension, and this will
+	 * replace the one that was there before
+	 * @param fileExtension
+	 * @param parsingClass
+	 */
+	public static void addPresentationType( String fileExtension, Class<? extends IPresentationParser> parsingClass ) {
+		presentationTypeMap.put( fileExtension, parsingClass );
+	}
+	
+	/**
+	 * Remove a parser type from the factory
+	 * @param fileExtension
+	 */
+	public static void removePresentationType( String fileExtension ) {
+		presentationTypeMap.remove( fileExtension );
+	}
+	
 	/**
 	 * Allows you to inject the correct Parsing class in the right place, bypassing the need to call the determineParsingClass method
 	 * @param parsingClass

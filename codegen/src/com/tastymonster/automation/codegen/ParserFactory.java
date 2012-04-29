@@ -13,7 +13,8 @@ public class ParserFactory {
 	public static IPresentationParser getParser( File file ) {
 		PresentationType type = new PresentationType( file );
 		
-		//TODO These methods could probably be put somewhere else, I just wanted to keep all these operations atomic for better testability
+		//TODO These methods could probably be put somewhere else, I just wanted to keep all these 
+		// operations atomic for better testability
 		type.determineParsingClass();
 		IPresentationParser parser = type.getParser();
 		parser.initPageContents();
