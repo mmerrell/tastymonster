@@ -3,6 +3,35 @@
   <groupId>TastyMonster</groupId>
   <artifactId>TastyMonster</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <name>Tasty Monster</name>
+  <url>http://www.tastymonster.com</url>
+  <licenses>
+  	<license>
+  	  <name>Apache 2</name>
+  	  <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+  	  <distribution>repo</distribution>
+  	  <comments>A business-friendls OSS license</comments>
+  	</license>
+  </licenses>
+  <organization>
+    <name>TastyMonster</name>
+    <url>http://www.tastymonster.com</url>
+  </organization>
+  
+  <developers>
+    <developer>
+      <id>mmerrell</id>
+      <name>Marcus Merrell</name>
+      <email>mmerrell@gmail.com</email>
+      <url>http://www.tastymonster.com</url>
+      <organization>TastyMonster</organization>
+      <organizationUrl>http://www.tastymonster.com</organizationUrl>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>-6</timezone>
+    </developer>
+  </developers>
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>

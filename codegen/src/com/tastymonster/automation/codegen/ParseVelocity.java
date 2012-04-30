@@ -150,7 +150,6 @@ public class ParseVelocity implements IPresentationParser {
 		}
 		
 		return fields;
-		
 	}
 
 	/**

@@ -1,7 +1,6 @@
 package com.tastymonster.automation.codegen;
 
 import java.io.File;
-import java.util.Set;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -46,11 +45,11 @@ public class TestPresentationType {
 
 	//Test the ability to add a new parser to the PresentationTypes Map, then ensure it can be retrieved successfully when you throw a new file type at it
 	public void testAddNewParser() {
-		PresentationType.addPresentationType( ".file", ParseFictionalUI.class );
+		PresentationType.addPresentationType( ".file", ParseTestStub.class );
 		PresentationType type = new PresentationType( new File( "examplePath/example.file" ) );
 		type.determineParsingClass();
 		
-		Assert.assertEquals( type.getParsingClass().getSimpleName(), ParseFictionalUI.class.getSimpleName(), "The Parsing Class should be the 'ParseFictionalUI' class"  );
+		Assert.assertEquals( type.getParsingClass().getSimpleName(), ParseTestStub.class.getSimpleName(), "The Parsing Class should be the 'ParseFictionalUI' class"  );
 	}
 
 	//This test needs to be run after the "happy path" ParseVelocity test. Since TestNG preserves state from one test to another, the static map will be changed by this test.
@@ -58,22 +57,10 @@ public class TestPresentationType {
 	@Test( dependsOnGroups = { "runFirst" } )
 	public void testChangeReferenceToExistingParser() {
 		//Re-route the .vm extension to point to our favorite ParseFictionalUI parser
-		PresentationType.addPresentationType( ".vm", ParseFictionalUI.class );
+		PresentationType.addPresentationType( ".vm", ParseTestStub.class );
 		PresentationType type = new PresentationType( new File( "examplePath/example.vm" ) );
 		type.determineParsingClass();
 
-		Assert.assertEquals( type.getParsingClass().getSimpleName(), ParseFictionalUI.class.getSimpleName(), "The Parsing Class should be the 'ParseFictionalUI' class after we changed the definition for '.vm'" );
-	}
-
-	// This is just a nothing class for testing, so I didn't pretty up the code at all
-	public class ParseFictionalUI implements IPresentationParser {
-		@Override
-		public Set<FieldDetails> buildFieldDetails() { return null; }
-		@Override
-		public String getPageName() { return null; }
-		@Override
-		public String getPageURI() { return null; }
-		@Override
-		public void initPageContents() {}
+		Assert.assertEquals( type.getParsingClass().getSimpleName(), ParseTestStub.class.getSimpleName(), "The Parsing Class should be the 'ParseFictionalUI' class after we changed the definition for '.vm'" );
 	}
 }
