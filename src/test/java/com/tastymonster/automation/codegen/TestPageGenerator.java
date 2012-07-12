@@ -14,7 +14,7 @@ import com.tastymonster.automation.codegen.PageGenerator;
 
 public class TestPageGenerator {
 
-	private static final String pathToTest = "automation/test/com/tastymonster/automation/codegen/";
+	private static final String pathToTest = "src/test/resources/";
 
 	@Test( groups = { "PageGenerator" } )
 	public void testMergeVMContext() throws IOException {

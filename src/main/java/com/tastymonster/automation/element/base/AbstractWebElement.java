@@ -3,6 +3,7 @@ package com.tastymonster.automation.element.base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import com.tastymonster.automation.base.IAutomationFacade;
 import com.tastymonster.automation.base.WebDriverContext;
 import com.tastymonster.automation.page.base.AbstractAutomationPage;
 
@@ -68,6 +69,10 @@ public abstract class AbstractWebElement {
 	}
 
 	private WebElement getWebElement( By by ) {
-		return WebDriverContext.getDriver().findElement( by );
+		return getDriver().findElement( by );
+	}
+	
+	protected IAutomationFacade getDriver() {
+		return WebDriverContext.getDriver();
 	}
 }

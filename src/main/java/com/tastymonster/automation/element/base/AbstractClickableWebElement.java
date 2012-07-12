@@ -3,6 +3,8 @@ package com.tastymonster.automation.element.base;
 import org.openqa.selenium.By;
 
 import com.tastymonster.automation.base.WebDriverContext;
+import com.tastymonster.automation.element.base.AbstractWebElement;
+import com.tastymonster.automation.element.base.IClickable;
 import com.tastymonster.automation.page.base.AbstractAutomationPage;
 
 /**

@@ -8,15 +8,14 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import org.apache.velocity.exception.MethodInvocationException;
 import org.apache.velocity.exception.ParseErrorException;
 import org.apache.velocity.exception.ResourceNotFoundException;
-import org.apache.velocity.util.StringUtils;
-import org.testng.log4testng.Logger;
-
-import com.tastymonster.automation.codegen.PageInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This is all about responsibility. Here's the idea:
@@ -34,7 +33,7 @@ import com.tastymonster.automation.codegen.PageInfo;
 public class PageGenerator {
 
 	private static final String CODEGEN_TEMPLATE_PATH = "automation/codegen/src/com/tastymonster/automation/codegen/templates/";
-	private Logger log = Logger.getLogger( this.getClass() );
+    private Logger log = LoggerFactory.getLogger( getClass() );
 	
 	private IPresentationLayerInfo presentationLayer;
 	private List<PageInfo> pages;
@@ -224,7 +223,7 @@ public class PageGenerator {
 	}
 	
 	private String getPageClassName( PageInfo page ) {
-		return StringUtils.capitalizeFirstLetter( page.getPageName() ) + "Page";
+		return StringUtils.capitalize( page.getPageName() ) + "Page";
 	}
 
 	/**

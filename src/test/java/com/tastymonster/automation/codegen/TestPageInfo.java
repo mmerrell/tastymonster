@@ -14,7 +14,6 @@ public class TestPageInfo {
 		PageInfo page = new PageInfo();
 		page.initPage( new File( "Something.test" ) );
 		
-		
 		Assert.assertEquals( "The package should be 'com.tastymonster.automation.page.base'", "com.tastymonster.automation.page.base", page.getPackage() );
 		Assert.assertEquals( "The Page URI should be 'TestPage.test'", "TestPage.test", page.getPageURI() );
 		Assert.assertEquals( "The PageName should be 'TestPage.test'", "TestPage.test", page.getPageName() );

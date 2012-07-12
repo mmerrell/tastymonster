@@ -2,6 +2,7 @@ package com.tastymonster.automation.element.base;
 
 import com.tastymonster.automation.page.base.AbstractAutomationPage;
 
+
 public class ButtonWebElement extends AbstractClickableWebElement {
 
 	/**
