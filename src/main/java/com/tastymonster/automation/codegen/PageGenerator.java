@@ -32,9 +32,6 @@ import org.slf4j.LoggerFactory;
  */
 public class PageGenerator {
 
-	//Default path, override by calling setCodegenTemplatePath()
-	private String codegenTemplatePath = "src/main/java/com/tastymonster/automation/codegen/templates/";
-	
     private Logger log = LoggerFactory.getLogger( getClass() );
 	
 	private IPresentationLayerInfo presentationLayer;
@@ -78,7 +75,7 @@ public class PageGenerator {
 	 * @return
 	 */
 	protected String getBasePagePath() {
-		return this.getPresentationLayer().getBasePagePath();
+		return this.getPresentationLayer().getGeneratedPagePath();
 	}
 
 	/**
@@ -96,17 +93,9 @@ public class PageGenerator {
 	 * @return
 	 */
 	public String getCodegenTemplatePath() {
-		return codegenTemplatePath;
+		return this.getPresentationLayer().getCodegenTemplatePath();
 	}
 	
-	/**
-	 * Allows you to set the path to the templates used to generate the code
-	 * @param codegenTemplatePath
-	 */
-	public void setCodegenTemplatePath( String codegenTemplatePath ) {
-		this.codegenTemplatePath = codegenTemplatePath;
-	}
-
 	//****************************************************************
 	// Phase 1 - initialize the presentation layer file set
 	//****************************************************************
@@ -216,6 +205,9 @@ public class PageGenerator {
 		}
 	}
 
+	//****************************************************************
+	// Helper and utility methods
+	//****************************************************************
 	protected String getBasePagePath( PageInfo page ) {
 		return getBasePagePath() + getBasePageClassName( page ) + ".java";
 	}

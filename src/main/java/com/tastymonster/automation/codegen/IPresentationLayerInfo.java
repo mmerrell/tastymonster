@@ -6,21 +6,27 @@ import java.util.List;
 public interface IPresentationLayerInfo {
 
 	/**
-	 * Returns the list of files to be processed for generation
-	 * @return
+	 * @return The list of files to be processed for generation
 	 */
 	List<File> getFileList();
 
 	/**
-	 * Returns the path where the BasePage objects will be stored
-	 * @return
+	 * @return The path where the BasePage objects will be stored
 	 */
 	String getBasePagePath();
 
 	/**
-	 * Returns the path where the DerivedPage objects will be stored
-	 * @return
+	 * @return The path where the DerivedPage objects will be stored
 	 */
 	String getDerivedPagePath();
+	
+	/**
+	 * @return The path where the Generated page objects will be stored
+	 */
+	String getGeneratedPagePath();
 
+	/**
+	 * @return The path to get the VM Templates from which the pages will be generated
+	 */
+	String getCodegenTemplatePath();
 }
