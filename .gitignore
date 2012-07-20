@@ -2,10 +2,18 @@
 ###################
 test-output
 target
+automation/generated/**
+work
 
-# Generated pages. These should get re-generated every time a build is run, not checked in to the repository. The 
-# Derived pages are checked in
-automation/generated/src/com/tastymonster/automation/page/base/*
+# Eclipse stuff #
+#################
+.classpath
+.project
+
+# Maven stuff #
+###############
+.settings*
+.settings/
 
 # Compiled source #
 ###################
@@ -44,6 +52,6 @@ Thumbs.db
 
 # Java
 ######################
+*.jar
 *.war
 *.ear
-
