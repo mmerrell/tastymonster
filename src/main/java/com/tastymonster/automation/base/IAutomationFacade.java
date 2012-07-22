@@ -33,4 +33,10 @@ public interface IAutomationFacade {
 
 	public abstract DriverType getDriverType();
 
+	/**
+	 * Set the Site Root for the initial end-point to open
+	 * @param string
+	 */
+	void setSiteRoot(String string);
+
 }

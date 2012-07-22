@@ -13,6 +13,7 @@ public class WebDriverFacade implements IAutomationFacade {
 
 	private final WebDriver driver;
 	private final DriverType driverType;
+	private String siteURL;
 	
 	public WebDriverFacade( WebDriver driver ) { 
 		this.driver = driver;
@@ -41,11 +42,15 @@ public class WebDriverFacade implements IAutomationFacade {
 		return getDriver().findElement( by );
 	}
 
+	public void setSiteRoot( String siteURL ) {
+		this.siteURL = siteURL;
+	}
+	
 	/**
 	 * Returns the Root site, to which all URLs will be appended
 	 */
 	public String getSiteRoot() {
-		return "http://localhost:8080/PatentMojo/";
+		return siteURL;
 	}
 
 	/**

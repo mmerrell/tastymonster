@@ -17,6 +17,7 @@ public class WebDriverContext {
 		if ( driver == null ) {
 			try {
 				driver = new WebDriverFacade( DriverType.Firefox.driverClass.newInstance() );
+				driver.setSiteRoot( "http://localhost:8080/patentmojo/" );
 			} catch ( Exception e ) {
 				throw new RuntimeException( "Error instantiating driver " + DriverType.Firefox.toString() );
 			}

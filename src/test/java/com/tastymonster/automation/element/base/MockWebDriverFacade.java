@@ -32,4 +32,8 @@ public class MockWebDriverFacade implements IAutomationFacade {
 	public void setElementToFind( WebElement element ) {
 		this.element = element;
 	}
+
+	@Override
+	public void setSiteRoot(String string) {
+	}
 }
