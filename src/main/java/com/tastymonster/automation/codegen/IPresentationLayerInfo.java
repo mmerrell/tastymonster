@@ -29,4 +29,9 @@ public interface IPresentationLayerInfo {
 	 * @return The path to get the VM Templates from which the pages will be generated
 	 */
 	String getCodegenTemplatePath();
+
+        /** 
+         * @return The path to the source presentation templates (your product's templates, the ones to be parsed)
+         */
+        String getTemplatePath();
 }
