@@ -1,4 +1,4 @@
-package com.tastymonster.automation.codegen;
+package com.tastymonster.automation.util;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,8 +12,8 @@ public class AutomationUtils {
 	 * Normalizes a field name using the following steps:
 	 * 
 	 * 1) Removes all non-word characters and underscores
-	 * 2) 
-	 * 3) 
+	 * 2) Checks to make sure we're not left with a java keyword
+	 * 3) Makes it into proper camelCase
 	 * 
 	 * It will return an empty string if the initial value passed in or the resulting value after normalization is null or empty.
 	 * This allows you the freedom to handle it how you want without the restriction of a try/catch

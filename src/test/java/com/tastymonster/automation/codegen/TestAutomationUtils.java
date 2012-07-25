@@ -3,6 +3,8 @@ package com.tastymonster.automation.codegen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.tastymonster.automation.util.AutomationUtils;
+
 @Test
 public class TestAutomationUtils {
 

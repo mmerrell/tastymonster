@@ -18,7 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * This is all about responsibility. Here's the idea:
+ * This is all about responsibility:
  *   a) The IPresentationLayerInfo will build the information about the presentation layer 
  *     (working through whatever mechanism is necessary to build a list of files) 
  *   b) Then, this class will build the list of PageInfo objects by handing off responsibility 
@@ -198,8 +198,12 @@ public class PageGenerator {
 
 		try {
 			String pagePath = getDerivedPagePath( page );
-			log.debug( String.format( "Storing page [%s] to path [%s]", pageName, pagePath ) );
-			generateFile( pageContext, getCodegenTemplatePath() + "DerivedPageTemplate.vm", pagePath );
+			
+			File file = new File( pagePath );
+			if ( !file.exists() ) {
+				log.debug( String.format( "Storing page [%s] to path [%s]", pageName, pagePath ) );
+				generateFile( pageContext, getCodegenTemplatePath() + "DerivedPageTemplate.vm", pagePath );
+			}
 		} catch ( Exception e ) {
 			e.printStackTrace();
 		}

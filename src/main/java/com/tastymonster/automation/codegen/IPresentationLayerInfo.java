@@ -30,8 +30,8 @@ public interface IPresentationLayerInfo {
 	 */
 	String getCodegenTemplatePath();
 
-        /** 
-         * @return The path to the source presentation templates (your product's templates, the ones to be parsed)
-         */
-        String getTemplatePath();
+	/** 
+	 * @return The path to the source presentation templates (your product's templates, the ones to be parsed)
+	 */
+	String getTemplatePath();
 }

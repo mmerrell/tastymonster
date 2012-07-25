@@ -24,6 +24,7 @@ import com.tastymonster.automation.element.base.LinkWebElement;
 import com.tastymonster.automation.element.base.PlaceholderWebElement;
 import com.tastymonster.automation.element.base.TableWebElement;
 import com.tastymonster.automation.element.base.TextBoxWebElement;
+import com.tastymonster.automation.util.AutomationUtils;
 
 public class ParseVelocity implements IPresentationParser {
 

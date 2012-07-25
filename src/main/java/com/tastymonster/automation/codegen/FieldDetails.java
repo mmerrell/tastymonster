@@ -7,7 +7,6 @@ import com.tastymonster.automation.element.base.AbstractWebElement;
 
 /**
  * Contains information about the field that will be put in the Fields object (i.e. the "test script" cockpit)
- * @author Marcus
  *
  */
 public class FieldDetails implements Comparable<FieldDetails> {

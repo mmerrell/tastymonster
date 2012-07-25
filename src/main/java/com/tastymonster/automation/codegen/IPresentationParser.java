@@ -22,6 +22,8 @@ public interface IPresentationParser {
 	 */
 	String getPageURI();
 
+	/**
+	 * Brings the page "online" by opening it, analyzing the contents, and getting it ready to deliver its contents
+	 */
 	void initPageContents();
-
 }
