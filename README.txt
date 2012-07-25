@@ -1,14 +1,20 @@
 This project is the implementation of a talk given at the Selenium Conference 2012 in London. 
 
-The TastyMonster project is a test automation framework with a twist: in addition to outlining our own pet ideas as to how a Web Application should be modeled, this framework provides a rudimentary method, allowing you to generate the underlying pages and removing maintenance when the presentation layer changes out from under you.
+- git clone https://github.com/mmerrell/tastymonster.git
+- cd tastymonster
+- mvn install
 
-PatentMojo is a simple (intentionally terrible) web application based on the Velocity and Wicket presentation layers. It has, in its automation/ folder, a set of classes that use the TastyMonster framework to generate a base set of Page objects, and you'll be able to see, as you change the Velocity templates (the *.vm files in WEB-INF/templates), re-running the TestPageGenerator class will re-generate these Base Page objects, giving you a real-time update to the state of the application.
+This will build the core test framework and code generation piece, and "install" it into a local Maven repository
+
+The TastyMonster project provides a rudimentary test automation framework, which combines a powerful methodology for smart test design with the ability to generate a "model" of your presentation layer. This allows you to spend more time adding new test cases, and less time fixing broken ones.
+
+PatentMojo is a simple (intentionally terrible) web application, which implements the Velocity presentation framework. It has a set of classes that use the tastymonster framework to generate a base set of Page objects, and you'll be able to see, as you change the Velocity templates (the *.vm files in WEB-INF/templates), re-running the TestPageGenerator class will re-generate these Base Page objects, giving you a real-time update to the state of the application.
 
 Better documentation and unit tests will follow.
 
 When configured properly, it will generate a set of Selenium Page Objects for use in automated test scripts. These pages will allow you to "absorb" changes made to the product under test, by analyzing the presentation layer and reflecting changes in this Page Object model.
 
-It is split across two repositories under the mmerrell username: TastyMonster and PatentMojo. You'll need both to see an example of how to implement it, but if you're already familiar, you should just need TastyMonster.
+It is split across two repositories under the mmerrell username: tastymonster and patentmojo. You'll need both to see an example of how to implement it, but if you're already familiar, you should just need tastymonster.
 
 We'll publish a Maven jar file as soon as the code base calms down and we believe we have a model worth sharing. Until then it's probably best to use the code itself and make customizations as needed.
 
