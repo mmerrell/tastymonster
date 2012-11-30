@@ -22,6 +22,7 @@ public class WebDriverFacade implements IAutomationFacade {
 	
 	/**
 	 * Navigates to the given URL
+	 * @param url 
 	 */
 	public void get( String url ) {
 		driver.get( url );
@@ -37,6 +38,8 @@ public class WebDriverFacade implements IAutomationFacade {
 	
 	/**
 	 * Locates the given element on the page, and returns the actual Selenium WebElement implementation of it
+	 * @param by 
+	 * @return 
 	 */
 	public WebElement findElement( By by ) {
 		return getDriver().findElement( by );
@@ -48,6 +51,7 @@ public class WebDriverFacade implements IAutomationFacade {
 	
 	/**
 	 * Returns the Root site, to which all URLs will be appended
+	 * @return 
 	 */
 	public String getSiteRoot() {
 		return siteURL;

@@ -9,6 +9,7 @@ public interface ISettable<T> extends IBaseWebElement<T> {
 	
 	/**
 	 * Set the "stored value" in this element, but NOT in the browser
+	 * @param value 
 	 */
 	void setValue( T value );
 	
@@ -26,6 +27,7 @@ public interface ISettable<T> extends IBaseWebElement<T> {
 	
 	/**
 	 * Return the value currently reflected in the UI
+	 * @return 
 	 */
 	T getWebValue();
 }

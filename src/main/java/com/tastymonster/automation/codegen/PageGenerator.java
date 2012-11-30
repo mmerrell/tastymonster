@@ -112,6 +112,7 @@ public class PageGenerator {
 	
 	/**
 	 * Injector for the presentationLayer field
+	 * @param presentationLayer 
 	 * @param files
 	 */
 	public void setPresentationLayer( IPresentationLayerInfo presentationLayer ) {
