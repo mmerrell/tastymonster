@@ -1,7 +1,7 @@
 package com.tastymonster.automation.base;
 
 /**
- * This class will encapsulate all the information WebDriver will need to konw about the current test being run
+ * This class will encapsulate all the information WebDriver will need to know about the current test being run
  * @author mmerrell
  *
  */

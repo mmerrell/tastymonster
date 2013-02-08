@@ -2,6 +2,7 @@ package com.tastymonster.automation.base;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.TargetLocator;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -63,5 +64,9 @@ public class WebDriverFacade implements IAutomationFacade {
 	 */
 	public DriverType getDriverType() {
 		return driverType;
+	}
+
+	public TargetLocator switchTo() {
+	    return driver.switchTo();
 	}
 }
