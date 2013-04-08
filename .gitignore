@@ -5,10 +5,12 @@ target
 automation/generated/**
 work
 
-# Eclipse stuff #
+# IDE stuff #
 #################
 .classpath
 .project
+*.iml
+.idea/
 
 # Maven stuff #
 ###############
