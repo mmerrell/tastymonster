@@ -40,4 +40,9 @@ public class ParseTestStub implements IPresentationParser {
 	public void initPageContents() {
 	}
 
+    @Override
+    public String normalizeFieldName( String fieldName ) {
+        return fieldName;
+    }
+
 }

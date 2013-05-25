@@ -7,7 +7,6 @@ import com.tastymonster.automation.element.base.AbstractWebElement;
 
 /**
  * Contains information about the field that will be put in the Fields object (i.e. the "test script" cockpit)
- *
  */
 public class FieldDetails implements Comparable<FieldDetails> {
 
@@ -53,7 +52,6 @@ public class FieldDetails implements Comparable<FieldDetails> {
 	 * @return
 	 */
 	public String getInterface() {
-		//TODO Clean this up--this isn't code to be proud of
 		return Arrays.asList( type.getInterfaces() ).get( 0 ).getSimpleName();
 	}
 

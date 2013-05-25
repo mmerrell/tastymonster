@@ -3,7 +3,6 @@ package com.tastymonster.automation.codegen;
 import java.util.Set;
 
 public interface IPresentationParser {
-
 	/**
 	 * Builds the FieldDetails Set for the given page, using the correct parsing implementation
 	 * @return
@@ -26,4 +25,11 @@ public interface IPresentationParser {
 	 * Brings the page "online" by opening it, analyzing the contents, and getting it ready to deliver its contents
 	 */
 	void initPageContents();
+	
+    /**
+     * If the field needs to be scrubbed, normalized, parsed, or messed with at all, put all that logic here, and it will happen "magically"
+     * @param fieldName
+     * @return The normalized field name
+     */
+	String normalizeFieldName( String fieldName );
 }

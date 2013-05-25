@@ -26,8 +26,9 @@ public class ParseFreeMarker implements IPresentationParser {
 		return null;
 	}
 
-	protected String normalizeFieldName(String string) {
-		return null;
+	@Override
+	public String normalizeFieldName( String fieldName ) {
+		return fieldName;
 	}
 
 	@Override

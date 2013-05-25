@@ -11,12 +11,10 @@ public class MockWebElement implements WebElement {
 
 	@Override
 	public void clear() {
-
 	}
 
 	@Override
 	public void click() {
-
 	}
 
 	@Override

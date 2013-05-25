@@ -5,6 +5,7 @@ import com.tastymonster.automation.base.WebDriverContext;
 
 public abstract class AbstractAutomationPage implements IAutomationPage {
 
+    @Override
 	public void navigate() {
 		getDriver().get( getPageURL() );
 	}

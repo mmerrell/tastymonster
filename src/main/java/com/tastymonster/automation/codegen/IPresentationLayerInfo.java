@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.List;
 
 public interface IPresentationLayerInfo {
-
 	/**
 	 * @return The list of files to be processed for generation
 	 */

@@ -1,5 +1,7 @@
 package com.tastymonster.automation.util;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -50,7 +52,7 @@ public class AutomationUtils {
 								normalizedFieldName.substring( 1, normalizedFieldName.length() );
 	}
 	
-    private static Set<String> reservedKeywords = new HashSet<String>();
+    public static Set<String> reservedKeywords = new HashSet<String>();
     static {
         reservedKeywords.add( "abstract" );
         reservedKeywords.add( "assert" );
@@ -102,5 +104,19 @@ public class AutomationUtils {
         reservedKeywords.add( "void" );
         reservedKeywords.add( "volatile" );
         reservedKeywords.add( "while" );
+    }
+
+    /**
+     * Returns a URL-encoded version of the string passed in
+     * @param url
+     * @return
+     */
+    public static String getURLEncodedString( final String url ) {
+        try {
+            return URLEncoder.encode( url, "UTF-8" );
+        } catch ( UnsupportedEncodingException e ) {
+            //This will never happen in a million years unless UTF-8 becomes invalid for some reason
+            return "";
+        }
     }
 }

@@ -1,5 +1,7 @@
 package com.tastymonster.automation.base;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -18,6 +20,13 @@ public interface IAutomationFacade {
 	 * @return
 	 */
 	WebElement findElement( By by );
+
+    /**
+     * Find an element on the page
+     * @param by
+     * @return
+     */
+    List<WebElement> findElements( By by );
 
 	/**
 	 * Navigate to the given URL
@@ -39,4 +48,14 @@ public interface IAutomationFacade {
 	 */
 	void setSiteRoot(String string);
 
+    /**
+     * Synchronizes the registered windows with the currently open windows.  Handles closed and new windows (popups).
+     */
+    void synchronizeWindows();
+
+    /**
+     * Returns the current URL the browser is sitting on
+     * @return
+     */
+    String getCurrentUrl();
 }

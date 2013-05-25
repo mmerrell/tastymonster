@@ -249,4 +249,21 @@ public class ParseVelocity implements IPresentationParser {
 	      stream.close();
 	    }
 	}
+
+    /**
+     * Normalizes a field name using the following steps:
+     * 
+     * 1) Removes all non-word characters and underscores
+     * 2) Checks to make sure we're not left with a java keyword
+     * 3) Makes it into proper camelCase
+     * 
+     * It will return an empty string if the initial value passed in or the resulting value after normalization is null or empty.
+     * This allows you the freedom to handle it how you want without the restriction of a try/catch
+     * @param fieldName
+     * @return
+     */
+	@Override
+    public String normalizeFieldName( String fieldName ) {
+	    return AutomationUtils.normalizeFieldName( fieldName );
+    }
 }

@@ -1,8 +1,7 @@
 package com.tastymonster.automation.element.base;
 
-public interface ISettable<T> extends IBaseWebElement<T> {
-
-	/**
+public interface ISettable<T> extends IBaseWebElement {
+    /**
 	 * Persists the value stored in this element to the browser
 	 */
 	void setWebValue();
