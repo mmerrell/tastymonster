@@ -61,8 +61,6 @@ public class PageInfo {
 	 * @return
 	 */
 	public void initPage( File file ) {
-		Set<FieldDetails> fields = new HashSet<FieldDetails>();
-		
 		//Get parser from factory by sending it the file
 		//The factory will return an IPresentationParser with the correct implementation
 		// and its file contents initialized
@@ -71,9 +69,7 @@ public class PageInfo {
 		this.setPageName( parser.getPageName() );
 		this.setPageURI( parser.getPageURI() );
 
-		fields = parser.buildFieldDetails();
-		
 		//Call the methods on the parser to populate the correct field details
-		this.setFields( fields );
+		this.setFields( parser.buildFieldDetails() );
 	}
 }
