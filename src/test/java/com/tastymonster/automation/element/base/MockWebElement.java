@@ -6,6 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.OutputType; 
+import org.openqa.selenium.WebDriverException; 
+import org.openqa.selenium.Rectangle;
 
 public class MockWebElement implements WebElement {
 
@@ -79,5 +82,17 @@ public class MockWebElement implements WebElement {
 	@Override
 	public void submit() {
 	}
+	
+	@Override
+    public <X> X getScreenshotAs(OutputType<X> arg0) throws WebDriverException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Rectangle getRect() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
 }
